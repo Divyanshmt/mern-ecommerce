@@ -20,7 +20,12 @@ app.use(
     frameguard: true
   })
 );
-app.use(cors());
+app.use(
+  cors({
+    origin: true,
+    credentials: true
+  })
+);
 
 setupDB();
 require('./config/passport')(app);

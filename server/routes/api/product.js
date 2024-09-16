@@ -192,6 +192,7 @@ router.post(
       const isActive = req.body.isActive;
       const brand = req.body.brand;
       const image = req.file;
+      console.log(req.file);
 
       if (!sku) {
         return res.status(400).json({ error: 'You must enter sku.' });
@@ -240,6 +241,7 @@ router.post(
         product: savedProduct
       });
     } catch (error) {
+      console.log(error);
       return res.status(400).json({
         error: 'Your request could not be processed. Please try again.'
       });
